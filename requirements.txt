@@ -1,0 +1,8 @@
+opencv-python
+opencv-contrib-python
+torch
+facenet-pytorch
+tensorflow
+keras
+scipy
+django

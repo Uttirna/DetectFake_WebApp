@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'navbar.html' %}  
+{% load static %}
+  <div class="container-fluid" style="text-align: center;">
+    <div class="mx-auto" style="width: 700px; margin-top: 10%; ">
+      <h1 style="margin-top: 4%;"><strong style="font-weight:700;">DeepFake</strong> Detector</h1>
+      <div class="card" id="form-box" style="height: 400px;background-color: #F2F2F2;">
+        <div class="card-body" style="margin-top: 6%;">
+          <div class="form" style="padding: 7%;">
+            
+            <!-- <ul>
+              {% for path in path_list %}
+                <img src="{% static path %}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+              {% endfor %}
+              </ul> -->
+              
+            <!-- <img src="{% static '\10\face\real-001_OE6iOBz.mp4_0001.jpg' %}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt=""> -->
+              <form id="form" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    {{form.as_p}}
+                </div>
+                <div class="d-grid gap-2 col-6 mx-auto" style="margin-top: 4%;">
+                  <button type="button" onclick="myFunction()" class="btn btn-success ">Upload</button>  
+                  <em> Maximum size: 10 MB </em> <br />
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="card" id="spinner-box" style="height: 400px;background-color: #F2F2F2; display: none;">
+        <div class="card-body" style="padding: 5%;">
+          <h5 style="margin-top: 15%;">Video is being scanned. The process takes time. Please do not refresh the page.</h5>
+          <h5 style="margin-top: 5%; margin-bottom: 5%;">Loading....</h5>
+          <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-dark" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+      function myFunction() {
+          document.getElementById("form-box").style.display = "none";
+          document.getElementById("spinner-box").style.display = "block";
+          document.getElementById("form").submit();
+          
+      }
+  </script>
+        
+{% endblock %}
