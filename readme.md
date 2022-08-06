@@ -43,5 +43,5 @@ Result- if real
 
 Result- if fake
 ---
-![](Screenshots/Result_Real.png)
+![](Screenshots/Result_Fake.png)
 
