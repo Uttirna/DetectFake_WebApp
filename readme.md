@@ -29,14 +29,13 @@ python manage.py runserver
 ```
 The project will be available at **127.0.0.1:8000**.
 
-## ScreenShots  
-Processing page
----
-![](Screenshots/homepage.png)
-
+## ScreenShots 
 Home page
 ---
 ![](Screenshots/intermediate.png)
+Processing page
+---
+![](Screenshots/homepage.png)
 
 Result- if real 
 ---
